@@ -3502,4 +3502,54 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="inputs" val="4"/>
     </comp>
   </circuit>
+  <circuit name="controlUnit_Bbar">
+    <a name="circuit" val="controlUnit_Bbar"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(150,230)" to="(180,230)"/>
+    <wire from="(160,200)" to="(160,210)"/>
+    <wire from="(260,200)" to="(280,200)"/>
+    <wire from="(260,240)" to="(280,240)"/>
+    <wire from="(210,190)" to="(260,190)"/>
+    <wire from="(210,250)" to="(260,250)"/>
+    <wire from="(140,200)" to="(160,200)"/>
+    <wire from="(160,210)" to="(180,210)"/>
+    <wire from="(260,190)" to="(260,200)"/>
+    <wire from="(260,240)" to="(260,250)"/>
+    <wire from="(140,210)" to="(150,210)"/>
+    <wire from="(150,210)" to="(150,230)"/>
+    <wire from="(210,210)" to="(280,210)"/>
+    <wire from="(210,230)" to="(280,230)"/>
+    <wire from="(140,190)" to="(180,190)"/>
+    <wire from="(140,250)" to="(180,250)"/>
+    <wire from="(140,220)" to="(140,250)"/>
+    <wire from="(120,120)" to="(120,180)"/>
+    <wire from="(330,220)" to="(400,220)"/>
+    <comp lib="1" loc="(210,250)" name="NOT Gate"/>
+    <comp lib="1" loc="(210,210)" name="NOT Gate"/>
+    <comp lib="1" loc="(210,190)" name="NOT Gate"/>
+    <comp lib="0" loc="(120,120)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="operation"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(120,180)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="1" loc="(210,230)" name="NOT Gate"/>
+    <comp lib="0" loc="(400,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="operation"/>
+    </comp>
+    <comp lib="1" loc="(330,220)" name="AND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+  </circuit>
 </project>
