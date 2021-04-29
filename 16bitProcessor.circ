@@ -81,8 +81,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </tool>
     <sep/>
     <tool lib="0" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
       <a name="tristate" val="false"/>
       <a name="label" val="operation"/>
       <a name="labelloc" val="north"/>
@@ -3632,5 +3632,43 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="labelloc" val="north"/>
     </comp>
     <comp lib="1" loc="(200,210)" name="NOT Gate"/>
+  </circuit>
+  <circuit name="controlUnit_jump">
+    <a name="circuit" val="controlUnit_jump"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(150,230)" to="(230,230)"/>
+    <wire from="(280,220)" to="(370,220)"/>
+    <wire from="(140,200)" to="(230,200)"/>
+    <wire from="(140,210)" to="(230,210)"/>
+    <wire from="(140,220)" to="(150,220)"/>
+    <wire from="(140,240)" to="(230,240)"/>
+    <wire from="(110,190)" to="(120,190)"/>
+    <wire from="(150,220)" to="(150,230)"/>
+    <wire from="(140,230)" to="(140,240)"/>
+    <wire from="(110,130)" to="(110,190)"/>
+    <comp lib="0" loc="(110,130)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="operation"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(120,190)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="1" loc="(280,220)" name="AND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(370,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="operation"/>
+      <a name="labelloc" val="north"/>
+    </comp>
   </circuit>
 </project>
