@@ -19,7 +19,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   </lib>
   <lib desc="#Gates" name="1">
     <tool name="AND Gate">
-      <a name="inputs" val="3"/>
+      <a name="inputs" val="4"/>
     </tool>
     <tool name="OR Gate">
       <a name="inputs" val="2"/>
@@ -81,7 +81,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </tool>
     <sep/>
     <tool lib="0" name="Pin">
-      <a name="width" val="4"/>
+      <a name="output" val="true"/>
       <a name="tristate" val="false"/>
       <a name="label" val="operation"/>
     </tool>
@@ -3388,6 +3388,44 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp lib="1" loc="(530,280)" name="AND Gate">
       <a name="inputs" val="3"/>
+    </comp>
+  </circuit>
+  <circuit name="controlUnit_LorR">
+    <a name="circuit" val="controlUnit_LorR"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(190,130)" to="(190,200)"/>
+    <wire from="(500,220)" to="(530,220)"/>
+    <wire from="(220,220)" to="(280,220)"/>
+    <wire from="(220,200)" to="(220,210)"/>
+    <wire from="(430,210)" to="(450,210)"/>
+    <wire from="(310,220)" to="(430,220)"/>
+    <wire from="(430,210)" to="(430,220)"/>
+    <wire from="(190,200)" to="(200,200)"/>
+    <wire from="(220,200)" to="(450,200)"/>
+    <wire from="(220,230)" to="(450,230)"/>
+    <wire from="(220,240)" to="(450,240)"/>
+    <comp lib="0" loc="(200,200)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(190,130)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="operation"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(530,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="1" loc="(310,220)" name="NOT Gate"/>
+    <comp lib="1" loc="(500,220)" name="AND Gate">
+      <a name="inputs" val="4"/>
     </comp>
   </circuit>
 </project>
