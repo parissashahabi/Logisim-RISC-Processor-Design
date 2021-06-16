@@ -1,8 +1,21 @@
 #include <iostream>
-#include <string.h>
 #include <string>
+#include <math.h>
+#include <iomanip>
+#include <bitset>
+#include <vector>
+
 using namespace std;
 
+vector<long int> hexCode;
+
+void binaryStringToHex(string str){
+    long int longint = 0;
+    for(int i=0;i<16;i++)
+        longint+=( str[16-i-1]-48) * pow(2,i);
+    cout<< setbase(16);
+    hexCode.push_back(longint);
+}
 int counting(string str)        //counting "$" to decide between instructions types
 {
     int count=0;
@@ -98,32 +111,49 @@ string getRegisterCode(string reg)
 
 int main()
 {
-    string instruction,str,opcode,reg1,reg2,reg3,imm;
-    cin>>instruction;
-    cin>>str;
-    int type=counting(str);
-    switch (type)
-    {
-    case 3:     //R-type
-        opcode=getOpCode(instruction);
-        reg1=getRegisterCode(str.substr(1,2));
-        reg2=getRegisterCode(str.substr(5,2));
-        reg3=getRegisterCode(str.substr(9,2));
-        cout<<opcode<<","<<reg1<<","<<reg2<<","<<reg3;
-        break;
-    case 2:     //I-type
-        opcode=getOpCode(instruction);
-        reg1=getRegisterCode(str.substr(1,2));
-        reg2=getRegisterCode(str.substr(5,2));
-        imm=toBinary(str.substr(8,str.length()));
-        cout<<opcode<<","<<reg1<<","<<reg2<<","<<imm;
-        break;
-    case 0:     //J-type
-        opcode=getOpCode(instruction);
-        imm=toBinary(str.substr(0,str.length()));
-        cout<<opcode<<","<<imm;
-        break;
+    while(true){
+        string instruction, str, opcode, reg1, reg2, reg3, imm, res;
+        cin>>instruction;
+        if(instruction == "HLT")
+            break;
+        cin>>str;
+        int type=counting(str);
+        switch (type)
+        {
+            case 3:     //R-type
+                opcode=getOpCode(instruction);
+                reg1=getRegisterCode(str.substr(1,2));
+                reg2=getRegisterCode(str.substr(5,2));
+                reg3=getRegisterCode(str.substr(9,2));
+                res.append(opcode);
+                res.append(reg3);
+                res.append(reg2);
+                res.append(reg1);
+                binaryStringToHex(res);
+                break;
+            case 2:     //I-type
+                opcode=getOpCode(instruction);
+                reg1=getRegisterCode(str.substr(1,2));
+                reg2=getRegisterCode(str.substr(5,2));
+                imm = bitset<4>(toBinary(str.substr(8,str.length()))).to_string();
+                res.append(opcode);
+                res.append(reg2);
+                res.append(reg1);
+                res.append(imm);
+                binaryStringToHex(res);
+                break;
+            case 0:     //J-type
+                opcode=getOpCode(instruction);
+                imm = bitset<12>(toBinary(str.substr(0,str.length()))).to_string();
+                res.append(opcode);
+                res.append(imm);
+                binaryStringToHex(res);
+                break;
+        }
     }
-
+    for(int i=0; i<hexCode.size();++i){
+        cout<<hexCode[i]<<" ";
+    }
+    cout<<endl;
     return 0;
 }
