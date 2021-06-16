@@ -4,8 +4,10 @@
 #include <iomanip>
 #include <bitset>
 #include <vector>
-#include <fstream>
-
+#include<fstream>
+#include <QFile>
+#include <QTextStream>
+#include <QString>
 using namespace std;
 
 vector<long int> hexCode;
@@ -113,55 +115,54 @@ string getRegisterCode(string reg)
 int main()
 {
     ifstream indata;
-    string instruction, str;
-    indata.open("test.txt");
-    //indata >> instruction;
-    while ( !indata.eof() ) {
-        indata >> instruction;
-        indata >> str;
-        string opcode, reg1, reg2, reg3, imm, res;
-        int type = counting(str);
-        switch (type)
-        {
-            case 3:     //R-type
-                opcode=getOpCode(instruction);
-                reg1=getRegisterCode(str.substr(1,2));
-                reg2=getRegisterCode(str.substr(5,2));
-                reg3=getRegisterCode(str.substr(9,2));
-                res.append(opcode);
-                res.append(reg3);
-                res.append(reg2);
-                res.append(reg1);
-                binaryStringToHex(res);
-                break;
-            case 2:     //I-type
-                opcode=getOpCode(instruction);
-                reg1=getRegisterCode(str.substr(1,2));
-                reg2=getRegisterCode(str.substr(5,2));
-                imm = bitset<4>(toBinary(str.substr(8,str.length()))).to_string();
-                res.append(opcode);
-                res.append(reg2);
-                res.append(reg1);
-                res.append(imm);
-                binaryStringToHex(res);
-                break;
-            case 0:     //J-type
-                opcode=getOpCode(instruction);
-                imm = bitset<12>(toBinary(str.substr(0,str.length()))).to_string();
-                res.append(opcode);
-                res.append(imm);
-                binaryStringToHex(res);
-                break;
+        string instruction, str;
+        indata.open("E:test.txt");
+        //indata >> instruction;
+        while ( !indata.eof() ) {
+            indata >> instruction;
+            indata >> str;
+            string opcode, reg1, reg2, reg3, imm, res;
+            int type = counting(str);
+            switch (type)
+            {
+                case 3:     //R-type
+                    opcode=getOpCode(instruction);
+                    reg1=getRegisterCode(str.substr(1,2));
+                    reg2=getRegisterCode(str.substr(5,2));
+                    reg3=getRegisterCode(str.substr(9,2));
+                    res.append(opcode);
+                    res.append(reg3);
+                    res.append(reg2);
+                    res.append(reg1);
+                    binaryStringToHex(res);
+                    break;
+                case 2:     //I-type
+                    opcode=getOpCode(instruction);
+                    reg1=getRegisterCode(str.substr(1,2));
+                    reg2=getRegisterCode(str.substr(5,2));
+                    imm = bitset<4>(toBinary(str.substr(8,str.length()))).to_string();
+                    res.append(opcode);
+                    res.append(reg2);
+                    res.append(reg1);
+                    res.append(imm);
+                    binaryStringToHex(res);
+                    break;
+                case 0:     //J-type
+                    opcode=getOpCode(instruction);
+                    imm = bitset<12>(toBinary(str.substr(0,str.length()))).to_string();
+                    res.append(opcode);
+                    res.append(imm);
+                    binaryStringToHex(res);
+                    break;
+            }
         }
+        indata.close();
+    ofstream ofs ("E:hexcode.txt",ofstream::out);
+    for(int i=0; i<hexCode.size();++i)
+    {
+        ofs<<hexCode[i]<<" ";
     }
-    indata.close();
-    ofstream outdata;
-    outdata.open ("hexcode.txt");
-    for(int i=0; i<hexCode.size();++i){
-        outdata << hexCode[i]<<" ";
-    }
-    outdata << "\n";
-    outdata.close();
+    ofs.close();
 
     return 0;
 }
