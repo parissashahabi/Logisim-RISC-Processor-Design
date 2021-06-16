@@ -1,4 +1,11 @@
-ori $s0,$t0,3
-ori $s1,$t0,4
-add $s2,$s1,$s0
-ori $s3,$t0,3
+addi $t0,$z0,1
+addi $t1,$z0,1
+addi $t2,$z0,5
+addi $s0,$z0,1
+beq $s0,$t2,5
+addi $s0,$s0,1
+add $t3,$z0,$t1
+add $t1,$t1,$t0
+add $t0,$z0,$t3
+j 4
+sw $t1,$s0,2

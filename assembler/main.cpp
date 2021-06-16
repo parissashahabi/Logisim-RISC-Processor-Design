@@ -5,9 +5,7 @@
 #include <bitset>
 #include <vector>
 #include<fstream>
-#include <QFile>
-#include <QTextStream>
-#include <QString>
+
 using namespace std;
 
 vector<long int> hexCode;
@@ -117,7 +115,6 @@ int main()
     ifstream indata;
         string instruction, str;
         indata.open("E:test.txt");
-        //indata >> instruction;
         while ( !indata.eof() ) {
             indata >> instruction;
             indata >> str;
