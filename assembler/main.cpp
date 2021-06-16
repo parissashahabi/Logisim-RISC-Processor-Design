@@ -78,7 +78,7 @@ string getOpCode(string instruction)
 
 string getRegisterCode(string reg)
 {
-    if(reg=="zero")
+    if(reg=="z0")
         return "0000";
     else if(reg=="t0")
         return "0001";
