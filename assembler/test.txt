@@ -1,0 +1,4 @@
+ori $s0,$t0,3
+ori $s1,$t0,4
+add $s2,$s1,$s0
+ori $s3,$t0,3
