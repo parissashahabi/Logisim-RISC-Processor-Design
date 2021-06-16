@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <bitset>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -111,13 +112,15 @@ string getRegisterCode(string reg)
 
 int main()
 {
-    while(true){
-        string instruction, str, opcode, reg1, reg2, reg3, imm, res;
-        cin>>instruction;
-        if(instruction == "HLT")
-            break;
-        cin>>str;
-        int type=counting(str);
+    ifstream indata;
+    string instruction, str;
+    indata.open("test.txt");
+    //indata >> instruction;
+    while ( !indata.eof() ) {
+        indata >> instruction;
+        indata >> str;
+        string opcode, reg1, reg2, reg3, imm, res;
+        int type = counting(str);
         switch (type)
         {
             case 3:     //R-type
@@ -151,9 +154,14 @@ int main()
                 break;
         }
     }
+    indata.close();
+    ofstream outdata;
+    outdata.open ("hexcode.txt");
     for(int i=0; i<hexCode.size();++i){
-        cout<<hexCode[i]<<" ";
+        outdata << hexCode[i]<<" ";
     }
-    cout<<endl;
+    outdata << "\n";
+    outdata.close();
+
     return 0;
 }
