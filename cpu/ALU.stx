@@ -1,16 +1,16 @@
 Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to D:/cpu/xst/projnav.tmp
+--> Parameter TMPDIR set to C:/Users/Dear User/Desktop/arc_proj/arc/cpu/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
---> Parameter xsthdpdir set to D:/cpu/xst
+--> Parameter xsthdpdir set to C:/Users/Dear User/Desktop/arc_proj/arc/cpu/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: ALU.prj
 
@@ -39,17 +39,17 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "D:\cpu\ALU.v" into library work
+Analyzing Verilog file "C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" into library work
 Parsing module <ALU>.
-ERROR:HDLCompiler:806 - "D:\cpu\ALU.v" Line 40: Syntax error near "~|".
-ERROR:HDLCompiler:806 - "D:\cpu\ALU.v" Line 41: Syntax error near ":".
-ERROR:HDLCompiler:806 - "D:\cpu\ALU.v" Line 42: Syntax error near "default".
-ERROR:HDLCompiler:806 - "D:\cpu\ALU.v" Line 43: Syntax error near "endcase".
-ERROR:HDLCompiler:806 - "D:\cpu\ALU.v" Line 48: Syntax error near "endmodule".
-Verilog file D:\cpu\ALU.v ignored due to errors
+ERROR:HDLCompiler:806 - "C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 40: Syntax error near "~|".
+ERROR:HDLCompiler:806 - "C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 41: Syntax error near ":".
+ERROR:HDLCompiler:806 - "C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 42: Syntax error near "default".
+ERROR:HDLCompiler:806 - "C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 43: Syntax error near "endcase".
+ERROR:HDLCompiler:806 - "C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 48: Syntax error near "endmodule".
+Verilog file C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v ignored due to errors
 --> 
 
-Total memory usage is 4472736 kilobytes
+Total memory usage is 4495888 kilobytes
 
 Number of errors   :    5 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

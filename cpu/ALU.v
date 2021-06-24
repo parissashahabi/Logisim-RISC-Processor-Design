@@ -37,8 +37,8 @@ result = A - B;
 end //add - sub
  3'b000: begin if(Binvert == 1 && carryin == 0) result = A & B; end //and 
  3'b001: begin if(Binvert == 1 && carryin == 0) result = A | B; end //or
- 3'b010: begin if(Binvert == 1 && carryin == 0) result = A ~| B; //nor
- 3'b011: begin if(Binvert == 1 && carryin == 0) result = A ^ B; //xor
+ 3'b010: begin if(Binvert == 1 && carryin == 0) result = A ~| B; end //nor
+ 3'b011: begin if(Binvert == 1 && carryin == 0) result = A ^ B;end //xor
  default: result = A + B;
  endcase
  end

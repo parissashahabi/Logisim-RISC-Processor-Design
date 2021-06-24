@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2021-06-24T19:49:55</DateModified>
+  <DateModified>2021-06-24T16:33:56</DateModified>
   <ModuleName>data_path</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/cpu/iseconfig/data_path.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/cpu</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Dear User/Desktop/arc_proj/arc/cpu/iseconfig/data_path.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Dear User/Desktop/arc_proj/arc/cpu\</ImplementationReportsDirectory>
   <DateInitialized>2021-06-24T19:49:54</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

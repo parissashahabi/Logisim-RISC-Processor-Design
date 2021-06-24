@@ -5,5 +5,20 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="806" delta="old" >"C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 40: Syntax error near &quot;<arg fmt="%s" index="1">~|</arg>&quot;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="806" delta="old" >"C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 41: Syntax error near &quot;<arg fmt="%s" index="1">:</arg>&quot;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="806" delta="old" >"C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 42: Syntax error near &quot;<arg fmt="%s" index="1">default</arg>&quot;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="806" delta="old" >"C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 43: Syntax error near &quot;<arg fmt="%s" index="1">endcase</arg>&quot;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="806" delta="old" >"C:\Users\Dear User\Desktop\arc_proj\arc\cpu\ALU.v" Line 48: Syntax error near &quot;<arg fmt="%s" index="1">endmodule</arg>&quot;.
+</msg>
+
 </messages>
 
