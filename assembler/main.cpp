@@ -115,7 +115,8 @@ int main()
     ifstream indata;
         string instruction, str;
         indata.open("E:test.txt");
-        while ( !indata.eof() ) {
+        while ( !indata.eof() )
+        {
             indata >> instruction;
             indata >> str;
             string opcode, reg1, reg2, reg3, imm, res;
@@ -157,7 +158,7 @@ int main()
     ofstream ofs ("E:hexcode.txt",ofstream::out);
     for(int i=0; i<hexCode.size();++i)
     {
-        ofs<<hexCode[i]<<" ";
+        cout<<hexCode[i]<<" ";
     }
     ofs.close();
 
